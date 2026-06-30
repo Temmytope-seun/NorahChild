@@ -3,12 +3,14 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import DonateBanner from "@/components/DonateBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Our Team | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "Our Team",
   description:
     "Meet the founder, board, and staff behind NorahChild's work supporting children across Nigeria and Africa.",
-};
+  path: "/team",
+});
 
 const leadership = [
   {

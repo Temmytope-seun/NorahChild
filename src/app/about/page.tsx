@@ -4,12 +4,14 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import DonateBanner from "@/components/DonateBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "About Us | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "About Us",
   description:
     "Learn about NorahChild's story, mission, and the children we serve across Nigeria and Africa.",
-};
+  path: "/about",
+});
 
 const values = [
   {

@@ -3,12 +3,14 @@ import { GraduationCap, Trophy, Trees, PartyPopper, Check } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import DonateBanner from "@/components/DonateBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Our Programs | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "Our Programs",
   description:
     "Explore NorahChild's programs: school fees & scholarships, games & competitions, excursions, and holiday celebrations.",
-};
+  path: "/programs",
+});
 
 const programs = [
   {

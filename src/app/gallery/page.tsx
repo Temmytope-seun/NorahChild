@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import DonateBanner from "@/components/DonateBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Gallery | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "Gallery",
   description:
     "See moments from NorahChild's school fee support, excursions, games, and holiday celebrations.",
-};
+  path: "/gallery",
+});
 
 const categories = [
   { tone: "orange" as const, label: "Back-to-School Day" },

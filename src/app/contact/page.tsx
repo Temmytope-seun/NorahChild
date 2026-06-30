@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Contact Us | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us",
   description:
     "Get in touch with NorahChild for partnerships, donations, volunteering, or general inquiries.",
-};
+  path: "/contact",
+});
 
 const details = [
   {

@@ -4,12 +4,14 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import VolunteerForm from "@/components/VolunteerForm";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Get Involved | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "Get Involved",
   description:
     "Volunteer, partner, or fundraise with NorahChild to support orphans, internally displaced children, and children from low-income families.",
-};
+  path: "/volunteer",
+});
 
 const ways = [
   {

@@ -3,12 +3,14 @@ import { GraduationCap, Gift, Building2, Package } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import DonateOptions from "@/components/DonateOptions";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "Donate | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "Donate",
   description:
     "Support NorahChild's work with orphans, internally displaced children, and children of low-income families through one-time or monthly donations, corporate sponsorships, or in-kind gifts.",
-};
+  path: "/donate",
+});
 
 const ways = [
   {

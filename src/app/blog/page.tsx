@@ -5,12 +5,14 @@ import PageHero from "@/components/PageHero";
 import DonateBanner from "@/components/DonateBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import { posts } from "@/lib/posts";
+import { pageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: "News & Stories | NorahChild",
+export const metadata: Metadata = pageMetadata({
+  title: "News & Stories",
   description:
     "Read the latest news, stories, and updates from NorahChild's work with children across Nigeria and Africa.",
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

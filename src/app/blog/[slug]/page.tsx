@@ -5,6 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import DonateBanner from "@/components/DonateBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import { posts } from "@/lib/posts";
+import { pageMetadata } from "@/lib/page-metadata";
+import { siteConfig } from "@/lib/site";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -17,10 +19,22 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
-  return {
-    title: post ? `${post.title} | NorahChild` : "Story | NorahChild",
-    description: post?.excerpt,
-  };
+
+  if (!post) {
+    return pageMetadata({
+      title: "Story Not Found",
+      description: "This story could not be found.",
+      path: `/blog/${slug}`,
+    });
+  }
+
+  return pageMetadata({
+    title: post.title,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    type: "article",
+    publishedTime: new Date(post.date).toISOString(),
+  });
 }
 
 export default async function BlogPostPage({
@@ -33,8 +47,24 @@ export default async function BlogPostPage({
 
   if (!post) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: new Date(post.date).toISOString(),
+    image: `${siteConfig.url}/opengraph-image`,
+    author: { "@type": "Organization", name: siteConfig.name },
+    publisher: { "@type": "Organization", name: siteConfig.name },
+    mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="bg-stone-900 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link
