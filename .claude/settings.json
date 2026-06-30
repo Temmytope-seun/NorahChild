@@ -2,7 +2,26 @@
   "permissions": {
     "allow": [
       "Bash(npm -v)",
-      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)"
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/next/package.json'\\).version\\)\")",
+      "Bash(npx eslint *)",
+      "Bash(npm run *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/lucide-react/package.json'\\).version\\)\")",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(timeout 40 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx --yes playwright install chromium)",
+      "Bash(node \"C:\\\\Users\\\\temmy\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-temmy-OneDrive-Desktop-mlUdemy-norahchild\\\\2cff31ec-5bc5-439b-9c15-fe2e676670a7\\\\scratchpad\\\\verify.js\")",
+      "Bash(node verify.cjs)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:3000/_next/image?url=https%3A%2F%2Fplacehold.co%2F900x700%2Ff97316%2Ffff7ed%3Ffont%3Dpoppins%26text%3DChildren%2520Smiling%2520Together&w=1080&q=75\")",
+      "Bash(curl -s \"http://localhost:3000/_next/image?url=https%3A%2F%2Fplacehold.co%2F900x700%2Ff97316%2Ffff7ed%3Ffont%3Dpoppins%26text%3DChildren%2520Smiling%2520Together&w=1080&q=75\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" \"https://placehold.co/900x700.png/f97316/fff7ed?font=poppins&text=Test\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" \"https://placehold.co/900x700/f97316/fff7ed.png?font=poppins&text=Test\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" \"https://placehold.co/900x700/f97316/fff7ed.png\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" \"https://placehold.co/900x700.png\")"
     ]
   }
 }
