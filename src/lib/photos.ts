@@ -24,3 +24,8 @@ export const heroPhotos = {
     credit: "Lagos Food Bank Initiative / Pexels",
   },
 } as const;
+
+// Same classroom photo (landscape, crops cleanly into the 1200x630 OG
+// canvas) at a higher resolution for social share images.
+export const ogHeroPhoto =
+  "https://images.pexels.com/photos/28593055/pexels-photo-28593055.jpeg?auto=compress&cs=tinysrgb&w=1600";

@@ -13,6 +13,10 @@ export function pageMetadata({
   type?: "website" | "article";
   publishedTime?: string;
 }): Metadata {
+  // Setting `openGraph`/`twitter` at a page level replaces (not merges
+  // with) the root layout's objects, which would otherwise silently drop
+  // the shared OG image and downgrade the Twitter card type. Re-declare
+  // both explicitly on every page so social previews stay correct.
   return {
     title,
     description,
@@ -22,8 +26,14 @@ export function pageMetadata({
       description,
       url: path,
       type,
+      images: ["/opengraph-image"],
       ...(type === "article" && publishedTime ? { publishedTime } : {}),
     },
-    twitter: { title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/opengraph-image"],
+    },
   };
 }
