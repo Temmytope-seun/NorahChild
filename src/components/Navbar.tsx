@@ -14,6 +14,7 @@ const links = [
   { href: "/volunteer", label: "Get Involved" },
   { href: "/blog", label: "News" },
   { href: "/team", label: "Our Team" },
+  { href: "/transparency", label: "Transparency" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -26,7 +27,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Logo />
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-5 xl:flex">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -40,7 +41,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link
             href="/donate"
             className="rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-600"
@@ -52,7 +53,7 @@ export default function Navbar() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="text-stone-700 lg:hidden"
+          className="text-stone-700 xl:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X size={26} /> : <Menu size={26} />}
@@ -60,7 +61,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-stone-200 bg-white px-4 pb-4 lg:hidden">
+        <div className="border-t border-stone-200 bg-white px-4 pb-4 xl:hidden">
           <div className="flex flex-col gap-1 pt-2">
             {links.map((link) => (
               <Link

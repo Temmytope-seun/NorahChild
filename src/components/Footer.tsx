@@ -15,6 +15,7 @@ const involved = [
   { href: "/donate", label: "Donate" },
   { href: "/volunteer", label: "Volunteer" },
   { href: "/volunteer", label: "Partner With Us" },
+  { href: "/transparency", label: "Transparency" },
   { href: "/contact", label: "Contact Us" },
 ];
 
