@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   GraduationCap,
   Trophy,
@@ -10,6 +11,7 @@ import {
 import SectionHeading from "@/components/SectionHeading";
 import DonateBanner from "@/components/DonateBanner";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import { heroPhotos } from "@/lib/photos";
 
 const stats = [
   { label: "Children Supported", value: "1,200+" },
@@ -86,14 +88,45 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl border-4 border-stone-800 shadow-2xl">
-              <PhotoPlaceholder
-                label="Children Smiling Together"
-                tone="orange"
-                width={900}
-                height={700}
-                className="h-full w-full object-cover"
-              />
+            <div className="grid aspect-square grid-cols-2 grid-rows-2 gap-3 rounded-3xl border-4 border-stone-800 p-2 shadow-2xl sm:gap-4">
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src={heroPhotos.smilingChild.src}
+                  alt={heroPhotos.smilingChild.alt}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 45vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src={heroPhotos.classroom.src}
+                  alt={heroPhotos.classroom.alt}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 45vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src={heroPhotos.scholarshipRecipients.src}
+                  alt={heroPhotos.scholarshipRecipients.alt}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 45vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-2xl">
+                <Image
+                  src={heroPhotos.outreach.src}
+                  alt={heroPhotos.outreach.alt}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 45vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white p-5 shadow-xl sm:block">
               <p className="font-display text-2xl font-bold text-orange-600">
